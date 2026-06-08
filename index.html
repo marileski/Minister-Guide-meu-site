@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minister Guide - Guia do Ministro de Louvor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Minister Guide</div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#estudo">Estudo</a>
+            <a href="#louvores">Louvores & Cifras</a>
+            <a href="#aulas">Aulas Vocais</a>
+            <a href="#cadastro">Cadastro</a>
+        </nav>
+        <button id="toggle-dark-mode" class="btn-mode">🌓 Modo Escuro</button>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Guia de Ministros de Louvor</h1>
+        <p>Apoiando músicos, instrumentistas e vocais no serviço da igreja.</p>
+        <a href="#louvores" class="btn-principal">Ver Sugestões</a>
+    </section>
+
+    <section id="estudo" class="container">
+        <h2>📖 Versículo do Dia & Estudo</h2>
+        <div class="card-estudo">
+            <blockquote>"Cantai-lhe um cântico novo; tocai bem e com júbilo." - Salmos 33:3</blockquote>
+            <p><strong>Estudo:</strong> O louvor na igreja não é sobre performance, mas sobre a disposição do coração. Dedique tempo para ensaiar, mas gaste ainda mais tempo em oração.</p>
+        </div>
+    </section>
+
+    <section id="louvores" class="container">
+        <h2>🎶 Sugestões e Cifras</h2>
+        <div class="grid-louvores">
+            <div class="card">
+                <h3>Grandes Coisas</h3>
+                <p>Tom: G (Sol Maior)</p>
+                <button class="btn-interativo" onclick="alert('Cifra baixada com sucesso!')">Baixar Cifra</button>
+            </div>
+            <div class="card">
+                <h3>A Casa É Sua</h3>
+                <p>Tom: Bb (Si Bemol Maior)</p>
+                <button class="btn-interativo" onclick="alert('Cifra baixada com sucesso!')">Baixar Cifra</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="aulas" class="container">
+        <h2>🎥 Aulas Vocais</h2>
+        <div class="busca-container">
+            <input type="text" id="search-bar" placeholder="Digite a música ou tipo de voz (ex: Soprano, Alvo)...">
+        </div>
+        <div class="grid-aulas" id="lista-aulas">
+            <div class="card-aula" data-title="técnica vocal iniciante soprano">
+                <h4>Aquecimento para Sopranos</h4>
+                <p>Categoria: Técnica Vocal</p>
+            </div>
+            <div class="card-aula" data-title="alvo mais que a neve contralto">
+                <h4>Ajuste de Voz - Alvo Mais Que a Neve</h4>
+                <p>Categoria: Louvor Tradicional</p>
+            </div>
+            <div class="card-aula" data-title="grandes coisas tenor">
+                <h4>Abertura de Voz - Grandes Coisas</h4>
+                <p>Categoria: Louvor Pop</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadastro" class="container form-section">
+        <h2>📝 Cadastro de Ministros & Escalas</h2>
+        <form id="form-ministro">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" required placeholder="Ex: João Silva">
+            </div>
+            <div class="form-group">
+                <label for="funcao">Função no Louvor:</label>
+                <select id="funcao">
+                    <option value="vocal">Vocal / Ministro</option>
+                    <option value="violao">Violão / Guitarra</option>
+                    <option value="teclado">Teclado / Piano</option>
+                    <option value="bateria">Bateria / Percussão</option>
+                    <option value="baixo">Contrabaixo</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-principal">Salvar Escala</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Minister Guide - Desenvolvido para o Reino.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
