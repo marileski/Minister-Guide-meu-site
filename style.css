@@ -1,0 +1,298 @@
+/* ==========================================
+   1. IMPORTAÇÃO DE FONTES PROFISSIONAIS
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+/* ==========================================
+   2. VARIÁVEIS DE CORES (PALETA PASTEL)
+   ========================================== */
+:root {
+    --bg-color: #f7f5f0;         /* Creme pastel aconchegante */
+    --text-color: #4a4743;       /* Marrom acinzentado suave para leitura */
+    --primary-color: #b8c1ec;    /* Azul pastel moderno */
+    --accent-color: #eebbc3;     /* Rosa pastel para destaques */
+    --card-bg: #ffffff;          /* Fundo dos cards puro */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Paleta Corrigida para o Modo Escuro */
+[data-theme="dark"] {
+    --bg-color: #121629;         /* Azul escuro profundo */
+    --text-color: #b8c1ec;       /* Texto claro azulado */
+    --primary-color: #eebbc3;    /* Rosa pastel assume o destaque */
+    --accent-color: #fffffe;     /* Branco puro para contrastes */
+    --card-bg: #1c223d;          /* Cards ligeiramente mais claros que o fundo */
+}
+
+/* ==========================================
+   3. CONFIGURAÇÕES GERAIS E RESPIRO
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Fonte limpa para leitura */
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    line-height: 1.7;
+}
+
+/* Títulos com fonte elegante/clássica */
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+/* ==========================================
+   4. MENU DE NAVEGAÇÃO PREMIUM
+   ========================================== */
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco moderno */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] header {
+    background-color: rgba(28, 34, 61, 0.85);
+}
+
+header .logo {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+}
+
+nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+/* Linha decorativa que aparece ao passar o mouse nos links */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   5. SEÇÃO HERO (IMPACTANTE COM PARALLAX)
+   ========================================== */
+.hero {
+    text-align: center;
+    padding: 160px 20px;
+    /* Imagem profissional de música com película escura integrada */
+    background: linear-gradient(rgba(35, 41, 70, 0.55), rgba(35, 41, 70, 0.75)), 
+                url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax elegante */
+    color: #ffffff;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   6. LAYOUT DAS SEÇÕES E CARDS REESTRUTURADOS
+   ========================================== */
+.container {
+    max-width: 1100px;
+    margin: 80px auto; /* Mais espaçamento entre blocos de conteúdo */
+    padding: 0 25px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Linha charmosa abaixo dos títulos principais */
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    border-radius: 2px;
+}
+
+/* Estilização Premium para os Cards */
+.card-estudo, .card, .card-aula {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 20px; /* Bordas bem arredondadas de app moderno */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.02); /* Sombra quase invisível e leve */
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+.card:hover, .card-aula:hover {
+    transform: translateY(-8px); /* Card flutua suavemente */
+    box-shadow: 0 20px 40px rgba(184, 193, 236, 0.25); /* Sombra ganha brilho colorido */
+}
+
+/* Layout em Grid Organizado */
+.grid-louvores, .grid-aulas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Card Especial de Estudo Bíblico */
+.card-estudo blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   7. INPUTS, BOTÕES E MICROINTERAÇÕES
+   ========================================== */
+.busca-container {
+    margin-bottom: 35px;
+}
+
+input, select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid rgba(184, 193, 236, 0.4);
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(184, 193, 236, 0.2);
+}
+
+/* Botões Estilo Pílula Modernos */
+.btn-principal, .btn-interativo, .btn-mode {
+    background-color: var(--primary-color);
+    color: #232946;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px; /* Formato pílula */
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(184, 193, 236, 0.3);
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-principal:hover, .btn-interativo:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.04); /* Cresce sutilmente */
+    box-shadow: 0 8px 25px rgba(238, 187, 195, 0.4);
+}
+
+.btn-mode {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+}
+
+/* Formulário de Cadastro */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+/* ==========================================
+   8. ANIMAÇÕES E RESPONSIVIDADE
+   ========================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade Adaptativa para Celulares */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1.5rem 2%;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+    .container {
+        margin: 50px auto;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+    margin-top: 80px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0,0,0,0.02);
+}
